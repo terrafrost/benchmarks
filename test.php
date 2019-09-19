@@ -8,6 +8,8 @@ include('Crypt/RSA.php');
 
 echo "zzz\n";
 
+error_reporting(E_ALL);
+
 function microtime_float()
 {
     list($usec, $sec) = explode(" ", microtime());
@@ -68,3 +70,4 @@ vnGFhUKyff8ObWammbWnYnnzXnXRCL+982W8LoOhTzTv7LuSIMq3eOg=
 -----END RSA PRIVATE KEY-----'); // private key
 echo "eee\n";
 echo 'f = ' . $rsa->decrypt($ciphertext);
+echo "\nggg\n";
