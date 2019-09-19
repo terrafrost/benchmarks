@@ -32,9 +32,12 @@ AXCiguSHlo14ZEf/dwNlDmEfjBLrJPltOp69ZlqZYeykuEjg54KbvR2EMjQWj3V6
 9sh1jPZvEeK8Tw/3E+aC4AoQzOB0VLF56yn1yfMZFvBRYd6RAhtcoU7Lli3/J7c3
 ewIDAQAB
 -----END PUBLIC KEY-----'); // public key
+echo "bbb\n";
 
 $rsa->setEncryptionMode(CRYPT_RSA_ENCRYPTION_PKCS1);
 $ciphertext = $rsa->encrypt($plaintext);
+
+echo "ccc\n";
 
 $rsa->loadKey('-----BEGIN RSA PRIVATE KEY-----
 MIIEpQIBAAKCAQEAylq1ZRSREX7DWHUKg4HXKGN5C8GQgasXaobkF0J5ok/TfDQn
