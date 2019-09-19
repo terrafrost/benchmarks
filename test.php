@@ -66,4 +66,5 @@ LFFgmDrRAoGAS9i9FLcipuff0n+1e83rRiE78rAYqA345Y5exakEqfW/orTDfYcq
 or0jV1Oh8ZpspoQCEgei9pmP8BoN3j4JCV6sOduXPsRQfIqV7zAFCcIEqxnG1Xhz
 vnGFhUKyff8ObWammbWnYnnzXnXRCL+982W8LoOhTzTv7LuSIMq3eOg=
 -----END RSA PRIVATE KEY-----'); // private key
-echo 'd = ' . $rsa->decrypt($ciphertext);
+echo "eee\n";
+echo 'f = ' . $rsa->decrypt($ciphertext);
