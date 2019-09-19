@@ -6,8 +6,6 @@ include('Crypt/RSA.php');
 //include('PHP/Compat/Function/str_split.php');
 //include('PHP/Compat/Function/bcpowmod.php');
 
-echo "zzz\n";
-
 error_reporting(E_ALL);
 
 function microtime_float()
@@ -34,12 +32,9 @@ AXCiguSHlo14ZEf/dwNlDmEfjBLrJPltOp69ZlqZYeykuEjg54KbvR2EMjQWj3V6
 9sh1jPZvEeK8Tw/3E+aC4AoQzOB0VLF56yn1yfMZFvBRYd6RAhtcoU7Lli3/J7c3
 ewIDAQAB
 -----END PUBLIC KEY-----'); // public key
-echo "bbb\n";
 
 $rsa->setEncryptionMode(CRYPT_RSA_ENCRYPTION_PKCS1);
 $ciphertext = $rsa->encrypt($plaintext);
-
-echo "ccc\n";
 
 $rsa->loadKey('-----BEGIN RSA PRIVATE KEY-----
 MIIEpQIBAAKCAQEAylq1ZRSREX7DWHUKg4HXKGN5C8GQgasXaobkF0J5ok/TfDQn
@@ -68,6 +63,5 @@ LFFgmDrRAoGAS9i9FLcipuff0n+1e83rRiE78rAYqA345Y5exakEqfW/orTDfYcq
 or0jV1Oh8ZpspoQCEgei9pmP8BoN3j4JCV6sOduXPsRQfIqV7zAFCcIEqxnG1Xhz
 vnGFhUKyff8ObWammbWnYnnzXnXRCL+982W8LoOhTzTv7LuSIMq3eOg=
 -----END RSA PRIVATE KEY-----'); // private key
-echo "eee\n";
-echo 'f = ' . $rsa->decrypt($ciphertext);
-echo "\nggg\n";
+echo $rsa->decrypt($ciphertext);
+echo "\n";
