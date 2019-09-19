@@ -25,5 +25,8 @@ matrix:
     - php: 7.4snapshot
       dist: xenial
 
+before_script:
+  - phpenv config-rm xdebug.ini
+
 script:
   - php test.php
