@@ -6,6 +6,8 @@ include('Crypt/RSA.php');
 //include('PHP/Compat/Function/str_split.php');
 //include('PHP/Compat/Function/bcpowmod.php');
 
+echo "zzz\n";
+
 function microtime_float()
 {
     list($usec, $sec) = explode(" ", microtime());
