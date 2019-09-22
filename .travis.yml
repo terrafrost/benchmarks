@@ -1,7 +1,6 @@
 language: php
 php:
-  - "7.0"
-sudo: false
+  - "7.2"
 services:
   - docker
 
