@@ -1,32 +1,17 @@
 language: php
+php:
+  - "7.0"
+sudo: false
+services:
+  - docker
 
-matrix:
-  include:
-    - php: 5.2
-      dist: precise
-    - php: 5.3
-      dist: precise
-    - php: 5.4
-      dist: precise
-    - php: 5.5.9
-      dist: trusty
-    - php: 5.5
-      dist: trusty
-    - php: 5.6
-      dist: xenial
-    - php: 7.0
-      dist: xenial
-    - php: 7.1
-      dist: xenial
-    - php: 7.2
-      dist: xenial
-    - php: 7.3
-      dist: xenial
-    - php: 7.4snapshot
-      dist: xenial
-
-before_script:
-  - phpenv config-rm xdebug.ini
+env:
+  - PHP_VERSION=7.1
+  - PHP_VERSION=7.2
 
 script:
-  - php test.php
+  - docker build -t "benchmark/${PHP_VERSION}" "docker/${PHP_VERSION}"
+  - docker run -v "`pwd`:/opt/src" \
+      -w "/opt/src" \
+      "benchmark/${PHP_VERSION}" \
+      php test.php
