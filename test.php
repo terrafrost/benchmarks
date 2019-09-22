@@ -14,7 +14,7 @@ if (!extension_loaded('xdebug')) {
     echo 'not ';
 }
 echo "loaded\n";
-echo "Integer Size: ';
+echo 'Integer Size: ';
 echo defined('PHP_INT_SIZE') ? PHP_INT_SIZE : 4;
 echo "\n";
 
