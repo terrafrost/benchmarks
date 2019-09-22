@@ -14,6 +14,11 @@ if (!extension_loaded('xdebug')) {
     echo 'not ';
 }
 echo "loaded\n";
+echo 'OpenSSL is ';
+if (!extension_loaded('openssl')) {
+    echo 'not ';
+}
+echo "loaded\n";
 echo 'Integer Size: ';
 echo defined('PHP_INT_SIZE') ? PHP_INT_SIZE : 4;
 echo "\n";
@@ -26,7 +31,7 @@ function microtime_float()
 }
 
 define('MATH_BIGINTEGER_MODE', MATH_BIGINTEGER_MODE_INTERNAL);
-define('MATH_BIGINTEGER_OPENSSL_DISABLE', true);
+//define('MATH_BIGINTEGER_OPENSSL_DISABLE', true);
 
 $start = microtime_float();
 
