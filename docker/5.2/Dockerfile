@@ -1,1 +1,1 @@
-FROM php:5.2
+FROM tommylau/php-5.2
