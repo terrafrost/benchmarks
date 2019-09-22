@@ -6,9 +6,9 @@ include('Crypt/RSA.php');
 //include('PHP/Compat/Function/str_split.php');
 //include('PHP/Compat/Function/bcpowmod.php');
 
-error_reporting(E_ALL);
+echo "THIS FAR\n";
 
-echo 'PHP Version: ' . phpversion() . "\n";
+error_reporting(E_ALL);
 
 function microtime_float()
 {
@@ -65,10 +65,5 @@ LFFgmDrRAoGAS9i9FLcipuff0n+1e83rRiE78rAYqA345Y5exakEqfW/orTDfYcq
 or0jV1Oh8ZpspoQCEgei9pmP8BoN3j4JCV6sOduXPsRQfIqV7zAFCcIEqxnG1Xhz
 vnGFhUKyff8ObWammbWnYnnzXnXRCL+982W8LoOhTzTv7LuSIMq3eOg=
 -----END RSA PRIVATE KEY-----'); // private key
-
 echo $rsa->decrypt($ciphertext);
 echo "\n";
-
-$elapsed = microtime_float() - $start;
-
-echo "\ntook $elapsed seconds\n";
