@@ -1,6 +1,8 @@
 <?php
 set_include_path(get_include_path() . PATH_SEPARATOR . 'phpseclib/phpseclib');
 
+echo "ABOUT TO INCLUDE STUFF\n";
+
 include('Math/BigInteger.php');
 include('Crypt/RSA.php');
 //include('PHP/Compat/Function/str_split.php');
