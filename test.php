@@ -9,6 +9,15 @@ include('PHP/Compat/Function/bcpowmod.php');
 error_reporting(E_ALL);
 
 echo 'PHP Version: ' . phpversion() . "\n";
+echo 'xdebug is ';
+if (!extension_loaded('xdebug')) {
+    echo 'not ';
+}
+echo "loaded\n";
+echo "Integer Size: ';
+echo defined('PHP_INT_SIZE') ? PHP_INT_SIZE : 4;
+echo "\n";
+
 
 function microtime_float()
 {
