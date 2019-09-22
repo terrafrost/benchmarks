@@ -1,16 +1,14 @@
 <?php
 set_include_path(get_include_path() . PATH_SEPARATOR . 'phpseclib/phpseclib');
 
-echo "ABOUT TO INCLUDE STUFF\n";
-
 include('Math/BigInteger.php');
 include('Crypt/RSA.php');
 include('PHP/Compat/Function/str_split.php');
 include('PHP/Compat/Function/bcpowmod.php');
 
-echo "THIS FAR\n";
-
 error_reporting(E_ALL);
+
+echo 'PHP Version: ' . phpversion() . "\n";
 
 function microtime_float()
 {
@@ -69,3 +67,7 @@ vnGFhUKyff8ObWammbWnYnnzXnXRCL+982W8LoOhTzTv7LuSIMq3eOg=
 -----END RSA PRIVATE KEY-----'); // private key
 echo $rsa->decrypt($ciphertext);
 echo "\n";
+
+$elapsed = microtime_float() - $start;
+
+echo "took $elapsed seconds\n";
