@@ -11,7 +11,7 @@ env:
 
 script:
   - docker build -t "benchmark/${PHP_VERSION}" "docker/${PHP_VERSION}"
-  - docker run -v "`pwd`:/opt/src" \
-      -w "/opt/src" \
-      "benchmark/${PHP_VERSION}" \
+  - docker run -v "`pwd`:/opt/src"
+      -w "/opt/src"
+      "benchmark/${PHP_VERSION}"
       php test.php
