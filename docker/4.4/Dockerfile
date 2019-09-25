@@ -1,1 +1,1 @@
-FROM nouphet/docker-php4
+FROM terrafrost/php4.4
