@@ -14,9 +14,11 @@ if (!extension_loaded('xdebug')) {
     echo 'not ';
 }
 echo "loaded\n";
-echo 'Integer Size: ';
-echo defined('PHP_INT_SIZE') ? PHP_INT_SIZE : 4;
-echo "\n";
+echo 'GMP is ';
+if (!extension_loaded('gmp')) {
+    echo 'not ';
+}
+echo "loaded\n";
 
 
 function microtime_float()
@@ -25,7 +27,7 @@ function microtime_float()
     return ((float)$usec + (float)$sec);
 }
 
-define('MATH_BIGINTEGER_MODE', MATH_BIGINTEGER_MODE_INTERNAL);
+define('MATH_BIGINTEGER_MODE', MATH_BIGINTEGER_MODE_GMP);
 define('MATH_BIGINTEGER_OPENSSL_DISABLE', true);
 
 $start = microtime_float();
