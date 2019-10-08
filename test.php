@@ -14,8 +14,8 @@ if (!extension_loaded('xdebug')) {
     echo 'not ';
 }
 echo "loaded\n";
-echo 'GMP is ';
-if (!extension_loaded('gmp')) {
+echo 'BCMath is ';
+if (!extension_loaded('bcmath')) {
     echo 'not ';
 }
 echo "loaded\n";
@@ -27,7 +27,7 @@ function microtime_float()
     return ((float)$usec + (float)$sec);
 }
 
-define('MATH_BIGINTEGER_MODE', MATH_BIGINTEGER_MODE_GMP);
+define('MATH_BIGINTEGER_MODE', MATH_BIGINTEGER_MODE_BCMATH);
 define('MATH_BIGINTEGER_OPENSSL_DISABLE', true);
 
 $start = microtime_float();
