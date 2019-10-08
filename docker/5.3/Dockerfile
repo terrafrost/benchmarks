@@ -1,1 +1,1 @@
-FROM terrafrost:php5.3
+FROM terrafrost/php5.3
