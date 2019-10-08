@@ -1,1 +1,1 @@
-FROM tommylau/php-5.2
+FROM terrafrost/php5.2
