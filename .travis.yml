@@ -19,6 +19,7 @@ env:
   - PHP_VERSION=7.3
 
 script:
+  - git clone -b 1.0 --single-branch https://github.com/phpseclib/phpseclib.git 
   - docker build -t "benchmark/${PHP_VERSION}" "docker/${PHP_VERSION}"
   - docker run -v "`pwd`:/opt/src"
       -w "/opt/src"
