@@ -18,8 +18,8 @@ env:
 
 script:
   - git clone -b 1.0 --single-branch https://github.com/phpseclib/phpseclib.git
-  - docker pull "terrafrost:php${PHP_VERSION}"
+  - docker pull "terrafrost/php${PHP_VERSION}"
   - docker run -v "`pwd`:/opt/src"
       -w "/opt/src"
-      "terrafrost:php${PHP_VERSION}"
+      "terrafrost/php${PHP_VERSION}"
       php test.php
