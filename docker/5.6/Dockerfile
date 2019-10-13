@@ -1,1 +1,0 @@
-FROM terrafrost/php5.6
