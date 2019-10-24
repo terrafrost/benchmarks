@@ -14,11 +14,8 @@ if (!extension_loaded('xdebug')) {
     echo 'not ';
 }
 echo "loaded\n";
-echo 'BCMath is ';
-if (!extension_loaded('bcmath')) {
-    echo 'not ';
-}
-echo "loaded\n";
+echo defined('PHP_INT_SIZE') ? PHP_INT_SIZE : 4;
+echo "\n";
 
 
 function microtime_float()
@@ -27,8 +24,17 @@ function microtime_float()
     return ((float)$usec + (float)$sec);
 }
 
-define('MATH_BIGINTEGER_MODE', MATH_BIGINTEGER_MODE_BCMATH);
+define('MATH_BIGINTEGER_MODE', MATH_BIGINTEGER_MODE_INTERNAL);
 define('MATH_BIGINTEGER_OPENSSL_DISABLE', true);
+
+// copied from Math/BigInteger.php
+define('MATH_BIGINTEGER_BASE',       26);
+define('MATH_BIGINTEGER_BASE_FULL',  0x4000000);
+define('MATH_BIGINTEGER_MAX_DIGIT',  0x3FFFFFF);
+define('MATH_BIGINTEGER_MSB',        0x2000000);
+define('MATH_BIGINTEGER_MAX10',      10000000);
+define('MATH_BIGINTEGER_MAX10_LEN',  7);
+define('MATH_BIGINTEGER_MAX_DIGIT2', pow(2, 52));
 
 $start = microtime_float();
 
