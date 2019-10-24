@@ -26,6 +26,15 @@ function microtime_float()
 define('MATH_BIGINTEGER_MODE', MATH_BIGINTEGER_MODE_INTERNAL);
 define('MATH_BIGINTEGER_OPENSSL_DISABLE', true);
 
+// copied from Math/BigInteger.php
+define('MATH_BIGINTEGER_BASE',       26);
+define('MATH_BIGINTEGER_BASE_FULL',  0x4000000);
+define('MATH_BIGINTEGER_MAX_DIGIT',  0x3FFFFFF);
+define('MATH_BIGINTEGER_MSB',        0x2000000);
+define('MATH_BIGINTEGER_MAX10',      10000000);
+define('MATH_BIGINTEGER_MAX10_LEN',  7);
+define('MATH_BIGINTEGER_MAX_DIGIT2', pow(2, 52));
+
 for ($i = 1; $i <= 3; $i++) {
     $start = microtime_float();
 
