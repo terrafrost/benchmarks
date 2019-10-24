@@ -38,11 +38,12 @@ define('MATH_BIGINTEGER_MAX_DIGIT2', pow(2, 52));
 
 $start = microtime_float();
 
-$rsa = new Crypt_RSA();
+for ($i = 1; $i <= 3; $i++) {
+    $rsa = new Crypt_RSA();
 
-$plaintext = 'hello, world!';
+    $plaintext = 'hello, world!';
 
-$rsa->loadKey('-----BEGIN PUBLIC KEY-----
+    $rsa->loadKey('-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAylq1ZRSREX7DWHUKg4HX
 KGN5C8GQgasXaobkF0J5ok/TfDQnG4WntB/brjQaQRN9phFovHEClj2XywYfL/s9
 syHHioaVOIMZ86cLP7xzJc6dF/bydPLD1p14DkpJLgCSx6CyTlFzOhmm4/YMEh4t
@@ -52,10 +53,10 @@ AXCiguSHlo14ZEf/dwNlDmEfjBLrJPltOp69ZlqZYeykuEjg54KbvR2EMjQWj3V6
 ewIDAQAB
 -----END PUBLIC KEY-----'); // public key
 
-$rsa->setEncryptionMode(CRYPT_RSA_ENCRYPTION_PKCS1);
-$ciphertext = $rsa->encrypt($plaintext);
+    $rsa->setEncryptionMode(CRYPT_RSA_ENCRYPTION_PKCS1);
+    $ciphertext = $rsa->encrypt($plaintext);
 
-$rsa->loadKey('-----BEGIN RSA PRIVATE KEY-----
+    $rsa->loadKey('-----BEGIN RSA PRIVATE KEY-----
 MIIEpQIBAAKCAQEAylq1ZRSREX7DWHUKg4HXKGN5C8GQgasXaobkF0J5ok/TfDQn
 G4WntB/brjQaQRN9phFovHEClj2XywYfL/s9syHHioaVOIMZ86cLP7xzJc6dF/by
 dPLD1p14DkpJLgCSx6CyTlFzOhmm4/YMEh4tXR8FHY1f3pgWwEDXkkMKo/2U5FII
@@ -82,9 +83,10 @@ LFFgmDrRAoGAS9i9FLcipuff0n+1e83rRiE78rAYqA345Y5exakEqfW/orTDfYcq
 or0jV1Oh8ZpspoQCEgei9pmP8BoN3j4JCV6sOduXPsRQfIqV7zAFCcIEqxnG1Xhz
 vnGFhUKyff8ObWammbWnYnnzXnXRCL+982W8LoOhTzTv7LuSIMq3eOg=
 -----END RSA PRIVATE KEY-----'); // private key
-echo $rsa->decrypt($ciphertext);
-echo "\n";
+    echo $rsa->decrypt($ciphertext);
+    echo "\n";
 
-$elapsed = microtime_float() - $start;
+    $elapsed = microtime_float() - $start;
 
-echo "took $elapsed seconds\n";
+    echo "trial#$i: $elapsed seconds\n";
+}
