@@ -1,0 +1,25 @@
+language: php
+services:
+  - docker
+
+env:
+  - PHP_VERSION=4.4
+  - PHP_VERSION=5.0
+  - PHP_VERSION=5.1
+  - PHP_VERSION=5.2
+  - PHP_VERSION=5.3
+  - PHP_VERSION=5.4
+  - PHP_VERSION=5.5
+  - PHP_VERSION=5.6
+  - PHP_VERSION=7.0
+  - PHP_VERSION=7.1
+  - PHP_VERSION=7.2
+  - PHP_VERSION=7.3
+
+script:
+  - git clone -b 1.0 --single-branch https://github.com/phpseclib/phpseclib.git
+  - docker pull "phpseclib/php${PHP_VERSION}"
+  - docker run -v "`pwd`:/opt/src"
+      -w "/opt/src"
+      "phpseclib/php${PHP_VERSION}"
+      php test.php
