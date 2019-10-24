@@ -24,7 +24,7 @@ function microtime_float()
 }
 
 define('MATH_BIGINTEGER_MODE', MATH_BIGINTEGER_MODE_INTERNAL);
-define('MATH_BIGINTEGER_OPENSSL_DISABLE', true);
+//define('MATH_BIGINTEGER_OPENSSL_DISABLE', true);
 
 for ($i = 1; $i <= 3; $i++) {
     $start = microtime_float();
