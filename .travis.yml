@@ -7,8 +7,6 @@ before_install: true
 
 install:
   - travis/setup-libssh2.sh
-  - sudo useradd --create-home --base-dir /home "phpseclib"
-  - echo "phpseclib:phpseclib" | sudo chpasswd
 
 script:
   - composer require phpseclib/phpseclib:3.0.x-dev
