@@ -1,11 +1,10 @@
-language: php
-services:
-  - docker
+dist: xenial
+
+php:
+  - 7.4
+
+before_install: true
 
 script:
   - composer require phpseclib/phpseclib:3.0.x-dev
-  - docker pull "terrafrost/php7.4"
-  - docker run -v "`pwd`:/opt/src"
-      -w "/opt/src"
-      "terrafrost/php7.4"
-      php test.php
+  - php test.php

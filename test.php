@@ -17,7 +17,7 @@ echo "libssh2 took $elapsed seconds\r\n";
 
 $start = microtime(true);
 
-$sftp = new SFTP('127.0.0.1');
+$sftp = new \phpseclib3\Net\SFTP('127.0.0.1');
 $sftp->login('phpseclib', 'phpseclib');
 
 $sftp->put('1mb', str_repeat('a', 1024 * 1024));
