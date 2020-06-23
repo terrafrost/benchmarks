@@ -24,7 +24,7 @@ $sftp->login('phpseclib', 'phpseclib');
 
 $sftp->put('1mb', str_repeat('a', 1024 * 1024));
 
-echo $sftp->getLogs() . "\n\n";
+echo $sftp->getLog() . "\n\n";
 
 $elapsed = microtime(true) - $start;
 
