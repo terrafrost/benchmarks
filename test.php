@@ -10,7 +10,7 @@ $sftp = ssh2_sftp($ssh);
 
 $fp = fopen('ssh2.sftp://'.$sftp.'/1mb', 'w');
 
-fwrite($fp, str_repeat('a', 1024 * 1024));
+fwrite($fp, str_repeat('a', 1024));
 $elapsed = microtime(true) - $start;
 
 echo "libssh2 took $elapsed seconds\r\n";
@@ -22,7 +22,7 @@ define('NET_SSH2_LOGGING', 2);
 $sftp = new \phpseclib3\Net\SFTP('127.0.0.1');
 $sftp->login('phpseclib', 'phpseclib');
 
-$sftp->put('1mb', str_repeat('a', 1024 * 1024));
+$sftp->put('1mb', str_repeat('a', 1024));
 
 echo $sftp->getLog() . "\n\n";
 
