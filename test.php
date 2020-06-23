@@ -8,7 +8,7 @@ ssh2_auth_password($ssh, 'phpseclib', 'phpseclib');
 
 $sftp = ssh2_sftp($ssh);
 
-$fp = fopen('ssh2.sftp://'.$sftp.'/1mb', 'w');
+$fp = fopen('ssh2.sftp://'.intval($sftp).'/1mb', 'w');
 
 fwrite($fp, str_repeat('a', 1024));
 $elapsed = microtime(true) - $start;
