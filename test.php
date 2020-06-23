@@ -20,6 +20,7 @@ while (!feof($fp)) {
 }
 $elapsed = microtime(true) - $start;
 echo "libssh2 / download took $elapsed seconds\r\n";
+$hash = md5($str);
 $str = '';
 
 $start = microtime(true);
@@ -32,6 +33,9 @@ $elapsed = microtime(true) - $start;
 echo "phpseclib / upload took $elapsed seconds\r\n";
 
 $start = microtime(true);
-$sftp->get('1mb');
+$hash2 = md5($sftp->get('1mb'));
 $elapsed = microtime(true) - $start;
 echo "phpseclib / download took $elapsed seconds\r\n";
+
+echo $hash === $hash2 ? 'downloads matched' : 'downloads did not match';
+echo "\r\n";
