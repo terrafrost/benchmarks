@@ -14,7 +14,7 @@ echo "libssh2 / upload took $elapsed seconds\r\n";
 
 $start = microtime(true);
 $fp = fopen('ssh2.sftp://' . intval($sftp) . '/home/phpseclib/1mb', 'r');
-$str = ''.
+$str = '';
 while (!feof($fp)) {
     $str.= fread($fp, 1024);
 }
