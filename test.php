@@ -3,7 +3,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 $start = microtime(true);
 
-define('NET_SFTP_UPLOAD_QUEUE_SIZE', 1);
+//define('NET_SFTP_UPLOAD_QUEUE_SIZE', 1);
 
 $ssh = ssh2_connect('127.0.0.1');
 ssh2_auth_password($ssh, 'phpseclib', 'phpseclib');
@@ -30,7 +30,12 @@ $start = microtime(true);
 $sftp = new \phpseclib3\Net\SFTP('127.0.0.1');
 $sftp->login('phpseclib', 'phpseclib');
 
+define('NET_SSH2_LOGGING', 1);
+
 $sftp->put('1mb', str_repeat('a', 10 * 1024 * 1024));
+
+echo $sftp->getLog();
+
 $elapsed = microtime(true) - $start;
 echo "phpseclib / upload took $elapsed seconds\r\n";
 
