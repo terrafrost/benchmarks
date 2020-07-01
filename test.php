@@ -34,7 +34,7 @@ define('NET_SSH2_LOGGING', 1);
 
 $sftp->put('1mb', str_repeat('a', 10 * 1024 * 1024));
 
-echo $sftp->getLog();
+print_r($sftp->getLog());
 
 $elapsed = microtime(true) - $start;
 echo "phpseclib / upload took $elapsed seconds\r\n";
