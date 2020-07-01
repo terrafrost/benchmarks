@@ -3,6 +3,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 $start = microtime(true);
 
+define('NET_SFTP_UPLOAD_QUEUE_SIZE', 1);
+
 $ssh = ssh2_connect('127.0.0.1');
 ssh2_auth_password($ssh, 'phpseclib', 'phpseclib');
 $sftp = ssh2_sftp($ssh);
