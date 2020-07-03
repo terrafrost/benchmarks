@@ -30,6 +30,9 @@ $start = microtime(true);
 $sftp = new \phpseclib3\Net\SFTP('127.0.0.1');
 $sftp->login('phpseclib', 'phpseclib');
 
+print_r($sftp->getAlgorithmsNegotiated());
+exit;
+
 define('NET_SSH2_LOGGING', 1);
 
 $sftp->put('1mb', str_repeat('a', 10 * 1024 * 1024));
