@@ -25,5 +25,6 @@ install:
   - cd $cwd
 
 script:
-  - composer require terrafrost/phpseclib:3.0.x-dev
+#  - composer require phpseclib/phpseclib:3.0.x-dev
+  - composer install
   - php test.php
