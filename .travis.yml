@@ -25,6 +25,7 @@ install:
   - cd $cwd
 
 script:
+  - composer clear-cache
 #  - composer require phpseclib/phpseclib:3.0.x-dev
   - composer install
   - php test.php
