@@ -16,6 +16,14 @@ if (!extension_loaded('xdebug')) {
 echo "loaded\n";
 echo defined('PHP_INT_SIZE') ? PHP_INT_SIZE : 4;
 echo "\n";
+if (function_exists('opcache_get_status') && ($status = opcache_get_status())) {
+    echo $status['jit']['enabled'] && $status['jit']['on'] ?
+        'JIT is enabled' :
+        'JIT is not enabled';
+} else {
+    echo 'JIT is not enabled';
+}
+echo "\n";
 
 function microtime_float()
 {
