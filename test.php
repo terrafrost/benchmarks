@@ -19,6 +19,14 @@ if (!extension_loaded('gmp')) {
     echo 'not ';
 }
 echo "loaded\n";
+if (function_exists('opcache_get_status') && ($status = opcache_get_status())) {
+    echo $status['jit']['enabled'] && $status['jit']['on'] ?
+        'JIT is enabled' :
+        'JIT is not enabled';
+} else {
+    echo 'JIT is not enabled';
+}
+echo "\n";
 
 function microtime_float()
 {
