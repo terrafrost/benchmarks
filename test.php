@@ -16,7 +16,7 @@ if (!extension_loaded('xdebug')) {
 echo "loaded\n";
 echo defined('PHP_INT_SIZE') ? PHP_INT_SIZE : 4;
 echo "\n";
-if (extension_loaded('opcache') && ($status = opcache_get_status())) {
+if ($status = opcache_get_status()) {
     echo $status['jit']['enabled'] && $status['jit']['on'] ?
     'JIT is enabled' :
     'JIT is not enabled';
