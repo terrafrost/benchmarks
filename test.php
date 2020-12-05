@@ -17,7 +17,6 @@ echo "loaded\n";
 echo defined('PHP_INT_SIZE') ? PHP_INT_SIZE : 4;
 echo "\n";
 if (extension_loaded('opcache') && ($status = opcache_get_status())) {
-var_dump($status);
     echo $status['jit']['enabled'] && $status['jit']['on'] ?
     'JIT is enabled' :
     'JIT is not enabled';
