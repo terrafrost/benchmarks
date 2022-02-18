@@ -18,10 +18,12 @@ env:
   - PHP_VERSION=7.4
   - PHP_VERSION=8.0
   - PHP_VERSION=8.0jit
+  - PHP_VERSION=8.1 USE_QUAY=1
+  - PHP_VERSION=8.1jit USE_QUAY=1
 
 script:
   - git clone -b 1.0 --single-branch https://github.com/phpseclib/phpseclib.git
-  - docker pull "phpseclib/php${PHP_VERSION}"
+  - if [ -z ${USE_QUAY+x} ]; then docker pull "phpseclib/php${PHP_VERSION}"; else docker pull "quay.io/phpseclib/php${PHP_VERSION}" && docker image tag "quay.io/phpseclib/php${PHP_VERSION}" "phpseclib/php${PHP_VERSION}"; fi
   - docker run -v "`pwd`:/opt/src"
       -w "/opt/src"
       "phpseclib/php${PHP_VERSION}"
